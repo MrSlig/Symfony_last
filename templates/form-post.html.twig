@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <form action="{{ path('new-post') }}" method="post" enctype="multipart/form-data">
+        <p>Заголовок: <input type="text" name="title"></p>
+        <p>Текст публикации: <input type="text" name="text"></p>
+        <p>Изображение: <input type="file" name="image_path"></p>
+        <p><input type="submit" name="save" value="Опубликовать"></p>
+    </form>
+
+{% endblock %}

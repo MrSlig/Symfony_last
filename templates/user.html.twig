@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <img src="{{ user.avatar }}">
+    <h1>Пользователь с id = {{ dump(user) }}, логином: {{ user.login }}, именем: {{ user.name }}!</h1>
+
+{% endblock %}

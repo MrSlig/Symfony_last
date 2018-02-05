@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Привет {{ name }}!</h1>
+    <ul>
+        {% for row in list %}
+            {% if row == 'Рома' %}
+                <li>{{ row }}</li>
+            {% else %}
+                <li><b>{{ row }}</b></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <a href="{{ path('get_post', {'id' : 7}) }}">Ссылка на пост</a>
+
+{% endblock %}
