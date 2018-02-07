@@ -33,6 +33,13 @@ class Post
      * @ORM\Column(type="string")
      */
     private $imagePath;
+    /**
+     * @var Comment[]
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="post")
+     * @ORM\JoinColumn(name="id", referencedColumnName="post_id")
+     */
+    private $comments;
 
     public function getId() {
         return $this->id;
