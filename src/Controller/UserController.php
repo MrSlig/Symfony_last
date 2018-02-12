@@ -15,7 +15,7 @@ class UserController extends Controller {
      * @return Response
      * @Route("/user/{id}", name="get_user")
      */
-    public function getUser($id) {
+    public function getUserId($id) {
         $repository = $this->getDoctrine()
             ->getRepository(User::class);
         $user = $repository->find($id);
