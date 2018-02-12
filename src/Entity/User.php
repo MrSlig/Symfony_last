@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+//use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -40,6 +42,10 @@ class User
      * @ORM\Column(type="string")
      */
     private $avatarPath;
+    /**
+     * @var Session
+     */
+    private $session;
 
     public function getId() {
         return $this->id;
@@ -51,8 +57,8 @@ class User
         $this->login = $login;
         return $this;
     }
-    public function getPassword() {
-        return $this->$password;
+    public function getPassword($password) {
+        return $this->$password = $password;
     }
     public function setPassword($password) {
         $this->password = md5($password . SALT);
@@ -68,5 +74,12 @@ class User
     public function setAvatarPath($avatarPath) {
         $this->avatarPath = $avatarPath;
         return $this;
+    }
+    public function getSession() {
+        return $this->session;
+    }
+    public function setSession($session) {
+        $this->session = $session;
+        return $this->session;
     }
 }

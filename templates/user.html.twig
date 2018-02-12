@@ -3,5 +3,8 @@
 
     <img src="{{ user.avatar }}">
     <h1>Пользователь с id = {{ dump(user) }}, логином: {{ user.login }}, именем: {{ user.name }}!</h1>
-
+    {% if isset( {{ user.session }} ) %}
+        <h1>Данные о сессии:</h1>
+        <text>{{ user.session }}</text>
+    {% endif %}
 {% endblock %}
